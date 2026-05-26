@@ -124,4 +124,11 @@ class Bfhl26ApplicationTests {
                 .andExpect(jsonPath("$.sum", is("0")))
                 .andExpect(jsonPath("$.concat_string", is("")));
     }
+
+    @Test
+    void testHealthCheck() throws Exception {
+        mockMvc.perform(get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status", is("UP")));
+    }
 }
