@@ -5,48 +5,28 @@ import java.util.List;
 
 public class BfhlResponse {
     
-    @JsonProperty("is_success")
     private boolean isSuccess;
-
-    @JsonProperty("user_id")
     private String userId;
-
-    @JsonProperty("email")
     private String email;
-
-    @JsonProperty("roll_number")
     private String rollNumber;
-
-    @JsonProperty("odd_numbers")
     private List<String> oddNumbers;
-
-    @JsonProperty("even_numbers")
     private List<String> evenNumbers;
-
-    @JsonProperty("alphabets")
     private List<String> alphabets;
-
-    @JsonProperty("special_characters")
     private List<String> specialCharacters;
-
-    @JsonProperty("sepcial_characters")
-    private List<String> sepcialCharacters; // Supporting typo in Example B
-
-    @JsonProperty("sum")
     private String sum;
-
-    @JsonProperty("concat_string")
     private String concatString;
 
     // Getters and Setters
-    public boolean isSuccess() {
+    @JsonProperty("is_success")
+    public boolean getIsSuccess() {
         return isSuccess;
     }
 
-    public void setSuccess(boolean success) {
-        isSuccess = success;
+    public void setIsSuccess(boolean isSuccess) {
+        this.isSuccess = isSuccess;
     }
 
+    @JsonProperty("user_id")
     public String getUserId() {
         return userId;
     }
@@ -55,6 +35,7 @@ public class BfhlResponse {
         this.userId = userId;
     }
 
+    @JsonProperty("email")
     public String getEmail() {
         return email;
     }
@@ -63,6 +44,7 @@ public class BfhlResponse {
         this.email = email;
     }
 
+    @JsonProperty("roll_number")
     public String getRollNumber() {
         return rollNumber;
     }
@@ -71,6 +53,7 @@ public class BfhlResponse {
         this.rollNumber = rollNumber;
     }
 
+    @JsonProperty("odd_numbers")
     public List<String> getOddNumbers() {
         return oddNumbers;
     }
@@ -79,6 +62,7 @@ public class BfhlResponse {
         this.oddNumbers = oddNumbers;
     }
 
+    @JsonProperty("even_numbers")
     public List<String> getEvenNumbers() {
         return evenNumbers;
     }
@@ -87,6 +71,7 @@ public class BfhlResponse {
         this.evenNumbers = evenNumbers;
     }
 
+    @JsonProperty("alphabets")
     public List<String> getAlphabets() {
         return alphabets;
     }
@@ -95,23 +80,16 @@ public class BfhlResponse {
         this.alphabets = alphabets;
     }
 
+    @JsonProperty("special_characters")
     public List<String> getSpecialCharacters() {
         return specialCharacters;
     }
 
     public void setSpecialCharacters(List<String> specialCharacters) {
         this.specialCharacters = specialCharacters;
-        this.sepcialCharacters = specialCharacters; // Keep both in sync
     }
 
-    public List<String> getSepcialCharacters() {
-        return sepcialCharacters;
-    }
-
-    public void setSepcialCharacters(List<String> sepcialCharacters) {
-        this.sepcialCharacters = sepcialCharacters;
-    }
-
+    @JsonProperty("sum")
     public String getSum() {
         return sum;
     }
@@ -120,6 +98,7 @@ public class BfhlResponse {
         this.sum = sum;
     }
 
+    @JsonProperty("concat_string")
     public String getConcatString() {
         return concatString;
     }

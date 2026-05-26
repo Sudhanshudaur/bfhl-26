@@ -31,7 +31,7 @@ public class BfhlServiceImpl implements BfhlService {
 
         try {
             if (request == null || request.getData() == null) {
-                response.setSuccess(false);
+                response.setIsSuccess(false);
                 response.setOddNumbers(Collections.emptyList());
                 response.setEvenNumbers(Collections.emptyList());
                 response.setAlphabets(Collections.emptyList());
@@ -83,7 +83,7 @@ public class BfhlServiceImpl implements BfhlService {
                 }
             }
 
-            response.setSuccess(true);
+            response.setIsSuccess(true);
             response.setOddNumbers(oddNumbers);
             response.setEvenNumbers(evenNumbers);
             response.setAlphabets(alphabets);
@@ -92,7 +92,7 @@ public class BfhlServiceImpl implements BfhlService {
             response.setConcatString(alternatingCaps.toString());
 
         } catch (Exception e) {
-            response.setSuccess(false);
+            response.setIsSuccess(false);
             response.setOddNumbers(Collections.emptyList());
             response.setEvenNumbers(Collections.emptyList());
             response.setAlphabets(Collections.emptyList());

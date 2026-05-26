@@ -64,7 +64,6 @@ class Bfhl26ApplicationTests {
                 .andExpect(jsonPath("$.even_numbers", contains("334", "4")))
                 .andExpect(jsonPath("$.alphabets", contains("A", "R")))
                 .andExpect(jsonPath("$.special_characters", contains("$")))
-                .andExpect(jsonPath("$.sepcial_characters", contains("$")))
                 .andExpect(jsonPath("$.sum", is("339")))
                 .andExpect(jsonPath("$.concat_string", is("Ra")));
     }
@@ -84,7 +83,6 @@ class Bfhl26ApplicationTests {
                 .andExpect(jsonPath("$.even_numbers", contains("2", "4", "92")))
                 .andExpect(jsonPath("$.alphabets", contains("A", "Y", "B")))
                 .andExpect(jsonPath("$.special_characters", contains("&", "-", "*")))
-                .andExpect(jsonPath("$.sepcial_characters", contains("&", "-", "*")))
                 .andExpect(jsonPath("$.sum", is("103")))
                 .andExpect(jsonPath("$.concat_string", is("ByA")));
     }
