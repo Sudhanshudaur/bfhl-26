@@ -1,8 +1,21 @@
 package com.bfhl_26_Sudhanshu.bfhl_26.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
 
+@JsonPropertyOrder({
+    "is_success",
+    "user_id",
+    "email",
+    "roll_number",
+    "odd_numbers",
+    "even_numbers",
+    "alphabets",
+    "special_characters",
+    "sum",
+    "concat_string"
+})
 public class BfhlResponse {
     
     private boolean isSuccess;
