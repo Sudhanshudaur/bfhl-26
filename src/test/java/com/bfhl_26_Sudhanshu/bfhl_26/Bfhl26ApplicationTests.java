@@ -3,6 +3,7 @@ package com.bfhl_26_Sudhanshu.bfhl_26;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -20,6 +21,15 @@ class Bfhl26ApplicationTests {
 
     @Autowired
     private WebApplicationContext webApplicationContext;
+
+    @Value("${bfhl.user-id}")
+    private String expectedUserId;
+
+    @Value("${bfhl.email}")
+    private String expectedEmail;
+
+    @Value("${bfhl.roll-number}")
+    private String expectedRollNumber;
 
     private MockMvc mockMvc;
 
@@ -47,9 +57,9 @@ class Bfhl26ApplicationTests {
                         .content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success", is(true)))
-                .andExpect(jsonPath("$.user_id", is("sudhanshu_daur_26052026")))
-                .andExpect(jsonPath("$.email", is("sudhanshu.daur@example.com")))
-                .andExpect(jsonPath("$.roll_number", is("ABCD123")))
+                .andExpect(jsonPath("$.user_id", is(expectedUserId)))
+                .andExpect(jsonPath("$.email", is(expectedEmail)))
+                .andExpect(jsonPath("$.roll_number", is(expectedRollNumber)))
                 .andExpect(jsonPath("$.odd_numbers", contains("1")))
                 .andExpect(jsonPath("$.even_numbers", contains("334", "4")))
                 .andExpect(jsonPath("$.alphabets", contains("A", "R")))
@@ -67,6 +77,9 @@ class Bfhl26ApplicationTests {
                         .content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success", is(true)))
+                .andExpect(jsonPath("$.user_id", is(expectedUserId)))
+                .andExpect(jsonPath("$.email", is(expectedEmail)))
+                .andExpect(jsonPath("$.roll_number", is(expectedRollNumber)))
                 .andExpect(jsonPath("$.odd_numbers", contains("5")))
                 .andExpect(jsonPath("$.even_numbers", contains("2", "4", "92")))
                 .andExpect(jsonPath("$.alphabets", contains("A", "Y", "B")))
@@ -84,6 +97,9 @@ class Bfhl26ApplicationTests {
                         .content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success", is(true)))
+                .andExpect(jsonPath("$.user_id", is(expectedUserId)))
+                .andExpect(jsonPath("$.email", is(expectedEmail)))
+                .andExpect(jsonPath("$.roll_number", is(expectedRollNumber)))
                 .andExpect(jsonPath("$.odd_numbers", hasSize(0)))
                 .andExpect(jsonPath("$.even_numbers", hasSize(0)))
                 .andExpect(jsonPath("$.alphabets", contains("A", "ABCD", "DOE")))
@@ -100,6 +116,9 @@ class Bfhl26ApplicationTests {
                         .content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success", is(true)))
+                .andExpect(jsonPath("$.user_id", is(expectedUserId)))
+                .andExpect(jsonPath("$.email", is(expectedEmail)))
+                .andExpect(jsonPath("$.roll_number", is(expectedRollNumber)))
                 .andExpect(jsonPath("$.odd_numbers", hasSize(0)))
                 .andExpect(jsonPath("$.even_numbers", hasSize(0)))
                 .andExpect(jsonPath("$.alphabets", hasSize(0)))
