@@ -3,6 +3,7 @@ FROM eclipse-temurin:17-jdk-jammy as builder
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml mvnw.cmd ./
+RUN chmod +x mvnw
 COPY src ./src
 RUN ./mvnw clean package -DskipTests
 
